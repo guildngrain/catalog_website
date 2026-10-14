@@ -8,18 +8,13 @@ export function Footer() {
     <footer className="border-t">
       <Container>
         <div className="flex flex-col items-center justify-between gap-4 py-8 sm:flex-row">
-          <p className="text-sm text-muted-foreground">
+          <p>
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
           <ul className="flex items-center gap-6">
             {navigation.footer.map((item) => (
               <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  {item.label}
-                </Link>
+                <Link href={item.href}>{item.label}</Link>
               </li>
             ))}
           </ul>

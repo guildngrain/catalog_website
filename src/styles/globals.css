@@ -1,0 +1,137 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+/*
+ * Base element styles — apply tokens to semantic HTML.
+ * Components use plain h1/p/nav/etc.; they should NOT restate fonts, colors, or type scales.
+ * Override with token utilities (text-display-2, text-muted, …) only when intentional.
+ */
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0%;
+}
+
+/* ——— Headings (Bebas Neue) ——— */
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 60px;
+  letter-spacing: 0%;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: 0%;
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 28px;
+  letter-spacing: 0%;
+}
+
+h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: 0%;
+}
+
+h5 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: 0%;
+}
+
+h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0%;
+}
+
+/* Supporting copy under a heading → muted body */
+:where(h1, h2, h3, h4, h5, h6) + p {
+  color: var(--color-muted);
+}
+
+h1 + p {
+  font-size: 18px;
+}
+
+/* ——— Chrome ——— */
+
+header {
+  border-color: var(--color-border);
+  background-color: color-mix(in srgb, var(--color-background) 95%, transparent);
+}
+
+footer {
+  border-color: var(--color-border);
+}
+
+footer p {
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+nav a {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0%;
+  color: var(--color-muted);
+  transition: color 150ms ease;
+}
+
+nav a:hover {
+  color: var(--color-foreground);
+}
+
+/* Brand link in header nav (first link) keeps heading weight via h6-sized display if marked */
+header nav > a:first-child,
+header .brand {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--color-foreground);
+}
+
+footer a {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0%;
+  color: var(--color-muted);
+  transition: color 150ms ease;
+}
+
+footer a:hover {
+  color: var(--color-foreground);
+}
+
+button {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0%;
+}
+
+.card {
+  background-color: var(--color-card);
+  border-color: var(--color-border);
+  color: var(--color-foreground);
+}

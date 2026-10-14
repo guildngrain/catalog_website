@@ -1,10 +1,11 @@
 export const siteConfig = {
-  name: "Template",
-  description: "A modern, SEO-friendly website template built with Next.js",
+  name: "Guild & Grain",
+  description:
+    "Guild & Grain — craft, community, and flavor rooted in tradition.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   locale: "en_US",
   author: {
-    name: "",
+    name: "Guild & Grain",
     url: "",
   },
   social: {

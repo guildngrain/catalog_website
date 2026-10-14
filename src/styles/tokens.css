@@ -1,0 +1,176 @@
+/**
+ * Guild & Grain design tokens — single source of truth for VALUES.
+ * Colors & font CSS variables live here. Base HTML mapping lives in globals.css.
+ * @utility classes below are OPTIONAL overrides (e.g. Display 2 instead of default h1).
+ * Never hardcode hex, font families, or type scales in components.
+ */
+
+@theme inline {
+  --font-display: var(--font-bebas-neue);
+  --font-sans: var(--font-plus-jakarta);
+
+  /* Brand & surface (Figma Collection 1) */
+  --color-primary: #8b451f;
+  --color-secondary: #c48a5a;
+  --color-background: #171411;
+  --color-card: #211c18;
+  --color-accent: #c58b45;
+  --color-stroke: #3a3028;
+
+  /* Semantic aliases */
+  --color-foreground: #f4e9d8; /* Figma: text-primary */
+  --color-muted: #b8aa99; /* Figma: text-secondary */
+  --color-border: #3a3028; /* Figma: stroke */
+}
+
+/* ——— Display ——— */
+
+@utility text-display-1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 60px;
+  letter-spacing: 0%;
+}
+
+@utility text-display-2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 54px;
+  letter-spacing: 0%;
+}
+
+/* ——— Headings ——— */
+
+@utility text-heading-h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 48px;
+  letter-spacing: 0%;
+}
+
+@utility text-heading-h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: 0%;
+}
+
+@utility text-heading-h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 28px;
+  letter-spacing: 0%;
+}
+
+@utility text-heading-h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: 0%;
+}
+
+@utility text-heading-h5 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: 0%;
+}
+
+@utility text-heading-h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0%;
+}
+
+/* ——— Body ——— */
+
+@utility text-body-large {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0%;
+}
+
+@utility text-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0%;
+}
+
+@utility text-body-small {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0%;
+}
+
+/* ——— UI ——— */
+
+@utility text-ui-caption {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0%;
+}
+
+@utility text-ui-overline {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0%;
+}
+
+@utility text-ui-button-large {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0%;
+}
+
+@utility text-ui-button {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0%;
+}
+
+@utility text-ui-button-small {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0%;
+}
+
+@utility text-ui-navigation {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0%;
+}
+
+@utility text-ui-label {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0%;
+}
+
+@utility text-ui-price-large {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0%;
+}
+
+@utility text-ui-price {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0%;
+}
