@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Plus_Jakarta_Sans } from "next/font/google";
+import { Footer, Navbar } from "@/components/layout";
 import { siteConfig } from "@/config/site";
 import "@/styles/globals.css";
 
@@ -48,7 +49,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${bebasNeue.variable} ${plusJakarta.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <Navbar />
         <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -13,9 +13,11 @@
   --color-primary: #8b451f;
   --color-secondary: #c48a5a;
   --color-background: #171411;
+  --color-navbar: #211c18;
   --color-card: #211c18;
   --color-accent: #c58b45;
   --color-stroke: #3a3028;
+  --color-badge: #e85a2a; /* nav wishlist/cart notification */
 
   /* Semantic aliases */
   --color-foreground: #f4e9d8; /* Figma: text-primary */
