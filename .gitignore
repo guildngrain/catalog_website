@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+
+# Build / cache
+.next/
+.medusa/
+dist/
+build/
+.cache/
+*.tsbuildinfo
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Uploads
+uploads/
+backend/uploads/
