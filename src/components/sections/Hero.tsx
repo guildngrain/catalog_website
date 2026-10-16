@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { heroConfig } from "@/config/hero";
-import { Container } from "@/components/ui";
+import "./Hero.css";
 
 export function Hero() {
   return (
     <section className="hero" aria-label="Hero">
-      <p className="hero-tagline">
-        <span className="hero-tagline-accent">{heroConfig.tagline.accent}</span>{" "}
+      <h1 className="hero-tagline">
+        <span className="hero-tagline-accent">{heroConfig.tagline.accent}</span>
         <span>{heroConfig.tagline.rest}</span>
-      </p>
+      </h1>
 
       <div className="hero-stage">
         <div className="hero-media" aria-hidden>
@@ -19,36 +19,38 @@ export function Hero() {
             fill
             priority
             sizes="100vw"
-            className="hero-bg object-cover object-center"
+            className="hero-bg"
           />
-          <div className="hero-figures">
-            <Image
-              src={heroConfig.woman}
-              alt=""
-              width={720}
-              height={900}
-              priority
-              className="hero-figure hero-figure-woman"
-            />
-            <Image
-              src={heroConfig.man}
-              alt=""
-              width={520}
-              height={780}
-              priority
-              className="hero-figure hero-figure-man"
-            />
-          </div>
           <div className="hero-overlay" />
+          <Image
+            src={heroConfig.woman}
+            alt=""
+            width={376}
+            height={593}
+            priority
+            className="hero-figure hero-figure-woman"
+          />
+          <Image
+            src={heroConfig.man}
+            alt=""
+            width={250}
+            height={561}
+            priority
+            className="hero-figure hero-figure-man"
+          />
         </div>
 
-        <Container className="hero-content">
-          <div className="hero-copy">
-            <h1 className="hero-headline">
-              Born in the guilds of Europe,{" "}
-              <span className="hero-accent">Crafted for</span>{" "}
+        <div className="hero-copy">
+          <h2 className="hero-headline">
+            <span className="hero-headline-line">Born in the guilds of</span>
+            <span className="hero-headline-line">
+              Europe, <span className="hero-accent">Crafted for</span>
+            </span>
+            <span className="hero-headline-line">
               <span className="hero-accent">Modern</span> Nomads.
-            </h1>
+            </span>
+          </h2>
+          <div className="hero-copy-lower">
             <p className="hero-body">{heroConfig.body}</p>
             <div className="hero-actions">
               <Link
@@ -65,7 +67,7 @@ export function Hero() {
               </Link>
             </div>
           </div>
-        </Container>
+        </div>
       </div>
     </section>
   );

@@ -4,6 +4,7 @@ import { MessageCircle } from "lucide-react";
 import { navigation } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
 import { Button, Container } from "@/components/ui";
+import "./Footer.css";
 
 function FooterLinkColumn({
   title,

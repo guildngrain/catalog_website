@@ -2,17 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { Heart, Search, ShoppingBag } from "lucide-react";
 import { siteConfig } from "@/config/site";
-import { Container } from "@/components/ui";
 import { NavLinks } from "./NavLinks";
+import "./Navbar.css";
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full">
-      <Container>
-        <nav
-          className="flex items-center justify-between gap-8 py-5"
-          aria-label="Primary"
-        >
+    <header className="site-header sticky top-0 z-50 w-full">
+      <div className="site-header-inner">
+        <nav className="site-header-nav" aria-label="Primary">
           <Link href="/" className="shrink-0">
             <Image
               src={siteConfig.logo}
@@ -25,7 +22,7 @@ export function Navbar() {
             />
           </Link>
 
-          <div className="hidden items-center gap-8 lg:flex">
+          <div className="hidden items-center lg:flex">
             <NavLinks />
           </div>
 
@@ -67,7 +64,7 @@ export function Navbar() {
             </Link>
           </div>
         </nav>
-      </Container>
+      </div>
     </header>
   );
 }

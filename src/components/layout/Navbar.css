@@ -1,0 +1,116 @@
+/**
+ * Navbar — component-scoped layout.
+ * Colors & type from tokens.css only.
+ */
+
+.site-header {
+  --nav-h: calc(80.49 / var(--design-w) * 100vw);
+  --nav-pad-y: calc(16 / var(--design-w) * 100vw);
+  --nav-gap: calc(54 / var(--design-w) * 100vw);
+}
+
+.site-header-inner {
+  width: 100%;
+}
+
+.site-header-nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-block: 1.25rem;
+  padding-inline: 1rem;
+}
+
+.nav-links a {
+  font-family: var(--text-ui-navigation-family);
+  font-weight: var(--text-ui-navigation-weight);
+  font-size: var(--text-ui-navigation-size);
+  letter-spacing: var(--text-ui-navigation-tracking);
+  color: var(--color-text-primary);
+  transition: color 150ms ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent);
+}
+
+.nav-links a[aria-current="page"] {
+  color: var(--color-accent);
+}
+
+.nav-icon {
+  color: var(--color-text-primary);
+}
+
+.search-input {
+  font-family: var(--text-body-small-family);
+  font-size: var(--text-body-small-size);
+  outline: none;
+}
+
+.search-input:focus-visible {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+.badge {
+  display: inline-flex;
+  min-width: 1rem;
+  height: 1rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: var(--color-primary);
+  color: var(--color-text-primary);
+  font-family: var(--text-ui-caption-family);
+  font-weight: var(--text-ui-caption-weight);
+  font-size: 10px;
+  line-height: 1;
+  padding-inline: 0.2rem;
+}
+
+.cart-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 2.5rem;
+  padding-inline: 1rem;
+  border-radius: 9999px;
+  border: 1px solid var(--color-stroke);
+  background-color: var(--color-card);
+  color: var(--color-text-primary);
+  font-family: var(--text-ui-navigation-family);
+  font-weight: var(--text-ui-navigation-weight);
+  font-size: var(--text-ui-navigation-size);
+  transition: border-color 150ms ease;
+}
+
+.cart-pill:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text-primary);
+}
+
+@media (orientation: landscape) {
+  .site-header {
+    height: var(--nav-h);
+    box-sizing: border-box;
+    padding: var(--nav-pad-y) var(--design-pad-x);
+    border-bottom: 1px solid var(--color-stroke);
+  }
+
+  .site-header .site-header-inner {
+    height: 100%;
+  }
+
+  .site-header .site-header-nav {
+    height: 100%;
+    gap: var(--nav-gap);
+    padding: 0;
+  }
+
+  .site-header .nav-links {
+    gap: var(--nav-gap);
+  }
+}

@@ -1,0 +1,59 @@
+/**
+ * Footer — component-scoped layout.
+ * Colors & type from tokens.css only.
+ */
+
+footer a {
+  font-family: var(--text-ui-navigation-family);
+  font-weight: var(--text-ui-navigation-weight);
+  font-size: var(--text-ui-navigation-size);
+  letter-spacing: var(--text-ui-navigation-tracking);
+  color: var(--color-text-primary);
+  transition: color 150ms ease;
+}
+
+footer a:hover {
+  color: var(--color-accent);
+}
+
+.footer-desc {
+  font-family: var(--text-body-small-family);
+  font-size: var(--text-body-small-size);
+  color: var(--color-text-primary);
+}
+
+.footer-heading {
+  font-family: var(--text-heading-h5-family);
+  font-weight: var(--text-heading-h5-weight);
+  font-size: var(--text-heading-h5-size);
+  letter-spacing: var(--text-heading-h5-tracking);
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+
+.track-order {
+  border-color: var(--color-accent);
+  color: var(--color-text-primary);
+}
+
+.track-order:hover {
+  background-color: var(--color-card);
+}
+
+.footer-bar {
+  background-color: var(--color-primary);
+}
+
+.footer-bar a {
+  color: var(--color-text-primary);
+}
+
+.footer-bar a:hover {
+  color: var(--color-accent);
+}
+
+.footer-bar-copy {
+  color: var(--color-text-primary) !important;
+  font-family: var(--text-body-small-family);
+  font-size: var(--text-body-small-size);
+}

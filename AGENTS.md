@@ -27,19 +27,20 @@ src/
 │   └── [routes]/...        # Other pages
 ├── components/
 │   ├── ui/                 # Primitives (Button, Card, Container, Section)
-│   ├── layout/             # Navbar, Footer
-│   ├── sections/           # Hero, Features, CTA
+│   ├── layout/             # Navbar, Footer (+ co-located *.css)
+│   ├── sections/           # Hero, Features, CTA (+ co-located *.css)
 │   └── seo/                # JsonLd
 ├── lib/
 │   └── utils.ts            # cn() helper (clsx + tailwind-merge)
 ├── config/
 │   ├── site.ts             # Site metadata, social links
-│   └── navigation.ts       # Nav structure
+│   ├── navigation.ts       # Nav structure
+│   └── hero.ts             # Hero copy / asset paths
 ├── hooks/                  # Custom React hooks
 ├── types/                  # Shared TypeScript types
 └── styles/
-    ├── globals.css         # Tailwind entry + base body styles
-    └── tokens.css          # Design tokens (colors, fonts, text styles) — SINGLE SOURCE OF TRUTH
+    ├── globals.css         # Tailwind entry + shared base (body, headings, primitives)
+    └── tokens.css          # Shared palette, fonts, type utilities — SINGLE SOURCE OF TRUTH
 ```
 
 ### Component Hierarchy
@@ -64,28 +65,34 @@ RootLayout (app/layout.tsx)
 - Follow the existing file and folder naming conventions (PascalCase for components, camelCase for utilities)
 - Use the `@/` import alias for all imports within `src/`
 
-### Design tokens (mandatory)
+### Design tokens & styling (mandatory)
 
-Visual design is centralized in CSS — not in components.
+Shared visual values live in CSS tokens. **Component-specific layout/look lives with the component.**
 
 | File | Role |
 |------|------|
-| `src/styles/tokens.css` | Token **values** (`--color-*`, `--font-*`) + optional `@utility` overrides |
-| `src/styles/globals.css` | Maps tokens onto **semantic HTML** (`h1`–`h6`, `p`, `nav a`, `header`, `footer`, `button`, `.card`) |
+| `src/styles/tokens.css` | Figma tokens: colors (`--color-primary`, `--color-text-primary`, …) + text styles (`--text-display-1-*`, `text-display-1` utilities) |
+| `src/styles/globals.css` | Tailwind entry + shared base only (`body`, `h1`–`h6`, `header`/`footer` bg, `button`, `.card`, `--design-w`) |
+| `ComponentName.css` | Co-located next to the component — all styles unique to that component |
+| Tailwind in JSX | Allowed for layout/spacing and component-local utilities |
 | `src/config/site.ts` | Site name, URL, SEO copy only |
 | `layout.tsx` | Loads fonts via `next/font` (CSS variables only) |
 
-**How components get styles:** write normal HTML (`<h1>`, `<p>`, `<nav>`). Base styles in `globals.css` apply fonts, sizes, and colors automatically. Components only add **layout** classes (`flex`, `gap`, `mt-4`, `sticky`, etc.).
+**How components get styles:**
+
+1. Use shared tokens (`var(--color-*)`, Tailwind token colors like `bg-primary`) — never hardcode hex in components
+2. Put **component-specific** rules in a co-located `ComponentName.css` imported by that component (e.g. `Hero.css`, `Navbar.css`)
+3. Use Tailwind in the component for layout (`flex`, `gap`, `sticky`, …) when convenient
+4. Do **not** dump component styles into `globals.css` or `tokens.css`
 
 **Do not:**
 
-- Put `text-display-1`, `text-muted`, `text-heading-h2`, hex colors, or font families on Hero / Navbar / Features / etc. for default look
-- Redefine type scales outside `tokens.css` / `globals.css`
-- Put design tokens in TypeScript files (except site metadata in `site.ts`)
+- Put Hero/Navbar/Footer-specific rules in `globals.css`
+- Redefine the shared type scale or palette outside `tokens.css`
+- Put design token **values** in TypeScript (except site metadata in `site.ts`)
 
-**Overrides:** use token utilities from `tokens.css` only when you intentionally break the default (e.g. Display 2 instead of default `h1`).
-
-**When design changes:** edit `tokens.css` and/or the element rules in `globals.css`. Components should not need updates.
+**When shared brand colors/fonts change:** edit `tokens.css`.  
+**When a section’s layout/look changes:** edit that component’s CSS and/or Tailwind.
 
 ### Components
 
@@ -95,15 +102,15 @@ Visual design is centralized in CSS — not in components.
 - Page sections (Hero, Features, CTA) go in `src/components/sections/`
 - SEO components go in `src/components/seo/`
 - Each component folder has an `index.ts` barrel export
+- Co-locate `ComponentName.css` for component-specific styles; import it from the component
 - Components should be composable and accept `className` for styling overrides
 - Use `cn()` from `@/lib/utils` for conditional class merging
-- Prefer semantic HTML so `globals.css` styles apply; layout utilities only in components
+- Prefer semantic HTML; shared base styles come from `globals.css`
 
 ### Styling
 
-- Defaults come from `globals.css` element rules (fed by `tokens.css`)
-- Components: layout/spacing utilities only (`flex`, `gap`, `py-8`, …)
-- Optional overrides: token utilities from `tokens.css`
+- Shared: `tokens.css` (palette/type) + `globals.css` (base elements only)
+- Per-component: co-located `*.css` and/or Tailwind in the component file
 - Do not use inline styles unless absolutely necessary
 - Use `cn()` for conditional classes
 

@@ -2,433 +2,97 @@
 @import "./tokens.css";
 
 /*
- * Base element styles — apply tokens to semantic HTML.
- * Components use plain h1/p/nav/etc.; they should NOT restate fonts, colors, or type scales.
- * Override with token utilities (text-display-2, text-muted, …) only when intentional.
+ * Shared base only — colors & text styles come from tokens.css.
+ * Component-specific styles live next to each component (*.css) or as Tailwind.
  */
+
+:root {
+  --design-w: 1440;
+  --design-pad-x: calc(80 / var(--design-w) * 100vw);
+}
 
 body {
   background-color: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 16px;
-  letter-spacing: 0%;
+  color: var(--color-text-primary);
+  font-family: var(--text-body-family);
+  font-weight: var(--text-body-weight);
+  font-size: var(--text-body-size);
+  letter-spacing: var(--text-body-tracking);
 }
 
-/* ——— Headings (Bebas Neue) ——— */
+/* ——— Headings map to Figma text styles ——— */
 
 h1 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 72px;
-  line-height: 60px;
-  letter-spacing: 0%;
+  font-family: var(--text-display-1-family);
+  font-weight: var(--text-display-1-weight);
+  font-size: var(--text-display-1-size);
+  line-height: var(--text-display-1-line);
+  letter-spacing: var(--text-display-1-tracking);
 }
 
 h2 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 40px;
-  letter-spacing: 0%;
+  font-family: var(--text-heading-h2-family);
+  font-weight: var(--text-heading-h2-weight);
+  font-size: var(--text-heading-h2-size);
+  line-height: var(--text-heading-h2-line);
+  letter-spacing: var(--text-heading-h2-tracking);
 }
 
 h3 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 28px;
-  letter-spacing: 0%;
+  font-family: var(--text-heading-h3-family);
+  font-weight: var(--text-heading-h3-weight);
+  font-size: var(--text-heading-h3-size);
+  line-height: var(--text-heading-h3-line);
+  letter-spacing: var(--text-heading-h3-tracking);
 }
 
 h4 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 26px;
-  letter-spacing: 0%;
+  font-family: var(--text-heading-h4-family);
+  font-weight: var(--text-heading-h4-weight);
+  font-size: var(--text-heading-h4-size);
+  letter-spacing: var(--text-heading-h4-tracking);
 }
 
 h5 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 22px;
-  letter-spacing: 0%;
+  font-family: var(--text-heading-h5-family);
+  font-weight: var(--text-heading-h5-weight);
+  font-size: var(--text-heading-h5-size);
+  letter-spacing: var(--text-heading-h5-tracking);
 }
 
 h6 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 18px;
-  letter-spacing: 0%;
+  font-family: var(--text-heading-h6-family);
+  font-weight: var(--text-heading-h6-weight);
+  font-size: var(--text-heading-h6-size);
+  letter-spacing: var(--text-heading-h6-tracking);
 }
 
-/* Supporting copy under a heading → muted body */
 :where(h1, h2, h3, h4, h5, h6) + p {
-  color: var(--color-muted);
+  color: var(--color-text-secondary);
 }
 
 h1 + p {
-  font-size: 18px;
+  font-size: var(--text-body-large-size);
 }
 
-/* ——— Chrome ——— */
-
 header {
-  background-color: var(--color-navbar);
+  background-color: var(--color-card);
 }
 
 footer {
-  border-color: var(--color-border);
+  border-color: var(--color-stroke);
   background-color: var(--color-background);
 }
 
-/* Primary nav links only — not cart/wishlist */
-.nav-links a {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 0%;
-  color: var(--color-foreground);
-  transition: color 150ms ease;
-}
-
-.nav-links a:hover {
-  color: var(--color-accent);
-}
-
-.nav-links a[aria-current="page"] {
-  color: var(--color-accent);
-}
-
-.nav-icon {
-  color: var(--color-foreground);
-}
-
-footer a {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 0%;
-  color: var(--color-foreground);
-  transition: color 150ms ease;
-}
-
-footer a:hover {
-  color: var(--color-accent);
-}
-
-.footer-desc {
-  font-size: 14px;
-  color: var(--color-foreground);
-}
-
 button {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0%;
+  font-family: var(--text-ui-button-family);
+  font-weight: var(--text-ui-button-weight);
+  font-size: var(--text-ui-button-size);
+  letter-spacing: var(--text-ui-button-tracking);
 }
 
 .card {
   background-color: var(--color-card);
-  border-color: var(--color-border);
-  color: var(--color-foreground);
+  border-color: var(--color-stroke);
+  color: var(--color-text-primary);
 }
-
-.search-input {
-  font-family: var(--font-sans);
-  font-size: 14px;
-  outline: none;
-}
-
-.search-input:focus-visible {
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 1px var(--color-accent);
-}
-
-.badge {
-  display: inline-flex;
-  min-width: 1rem;
-  height: 1rem;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  background-color: var(--color-badge);
-  color: #fff;
-  font-family: var(--font-sans);
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 1;
-  padding-inline: 0.2rem;
-}
-
-.cart-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  height: 2.5rem;
-  padding-inline: 1rem;
-  border-radius: 9999px;
-  border: 1px solid var(--color-border);
-  background-color: var(--color-card);
-  color: var(--color-foreground);
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 500;
-  transition: border-color 150ms ease;
-}
-
-.cart-pill:hover {
-  border-color: var(--color-accent);
-  color: var(--color-foreground);
-}
-
-.footer-heading {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 22px;
-  letter-spacing: 0%;
-  color: var(--color-accent);
-  text-transform: uppercase;
-}
-
-.track-order {
-  border-color: var(--color-accent);
-  color: var(--color-foreground);
-}
-
-.track-order:hover {
-  background-color: var(--color-card);
-}
-
-.footer-bar {
-  background-color: var(--color-primary);
-}
-
-.footer-bar a {
-  color: var(--color-foreground);
-}
-
-.footer-bar a:hover {
-  color: var(--color-accent);
-}
-
-.footer-bar-copy {
-  color: var(--color-foreground) !important;
-  font-size: 14px;
-}
-
-/* ——— Home hero ——— */
-
-.hero {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-navbar);
-}
-
-.hero-tagline {
-  z-index: 4;
-  margin: 0;
-  padding: 0.85rem 1rem;
-  background-color: var(--color-background);
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(0.95rem, 2.2vw, 1.35rem);
-  line-height: 1;
-  letter-spacing: 0.06em;
-  text-align: center;
-  text-transform: uppercase;
-  color: var(--color-foreground);
-}
-
-.hero-tagline-accent {
-  color: var(--color-hero-accent);
-}
-
-.hero-stage {
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  min-height: min(calc(100vh - 8rem), 48rem);
-  align-items: center;
-  overflow: hidden;
-  background-color: var(--color-navbar);
-}
-
-.hero-media {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.hero-bg {
-  z-index: 0;
-}
-
-.hero-figures {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  display: flex;
-  height: 100%;
-  width: min(62%, 52rem);
-  align-items: flex-end;
-  justify-content: flex-end;
-  pointer-events: none;
-}
-
-.hero-figure {
-  height: auto;
-  width: auto;
-  max-height: 95%;
-  object-fit: contain;
-  mix-blend-mode: screen;
-}
-
-.hero-figure-woman {
-  position: relative;
-  z-index: 1;
-  max-width: 72%;
-  margin-right: -8%;
-}
-
-.hero-figure-man {
-  position: relative;
-  z-index: 2;
-  max-width: 48%;
-  margin-right: 2%;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background: linear-gradient(
-    90deg,
-    var(--color-navbar) 0%,
-    color-mix(in srgb, var(--color-navbar) 92%, transparent) 28%,
-    color-mix(in srgb, var(--color-navbar) 45%, transparent) 52%,
-    transparent 72%
-  );
-}
-
-.hero-content {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  padding-block: 4rem;
-}
-
-.hero-copy {
-  max-width: 36rem;
-}
-
-.hero-headline {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(2.75rem, 6vw, 4.5rem);
-  line-height: 0.95;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--color-foreground);
-}
-
-.hero-accent {
-  color: var(--color-hero-accent);
-}
-
-.hero-body {
-  margin-top: 1.5rem;
-  max-width: 28rem;
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--color-muted);
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 2rem;
-}
-
-.hero-btn-primary,
-.hero-btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 3rem;
-  padding-inline: 1.5rem;
-  border-radius: 9999px;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0%;
-  transition:
-    background-color 150ms ease,
-    border-color 150ms ease,
-    color 150ms ease;
-}
-
-.hero-btn-primary {
-  background-color: var(--color-hero-accent);
-  color: var(--color-foreground);
-}
-
-.hero-btn-primary:hover {
-  background-color: color-mix(in srgb, var(--color-hero-accent) 85%, black);
-  color: var(--color-foreground);
-}
-
-.hero-btn-secondary {
-  border: 1px solid var(--color-foreground);
-  background-color: transparent;
-  color: var(--color-foreground);
-}
-
-.hero-btn-secondary:hover {
-  background-color: color-mix(in srgb, var(--color-foreground) 10%, transparent);
-  color: var(--color-foreground);
-}
-
-@media (max-width: 1023px) {
-  .hero-stage {
-    min-height: 40rem;
-  }
-
-  .hero-figures {
-    width: 70%;
-    opacity: 0.55;
-  }
-
-  .hero-overlay {
-    background: linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--color-navbar) 70%, transparent) 0%,
-      color-mix(in srgb, var(--color-navbar) 88%, transparent) 45%,
-      var(--color-navbar) 100%
-    );
-  }
-
-  .hero-copy {
-    max-width: 100%;
-    padding-top: 6rem;
-  }
-}
-
-@media (max-width: 639px) {
-  .hero-figures {
-    width: 100%;
-    opacity: 0.4;
-  }
-
-  .hero-headline {
-    font-size: 2.5rem;
-  }
-}
-

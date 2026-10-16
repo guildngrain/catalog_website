@@ -1,179 +1,292 @@
 /**
- * Guild & Grain design tokens — single source of truth for VALUES.
- * Colors & font CSS variables live here. Base HTML mapping lives in globals.css.
- * @utility classes below are OPTIONAL overrides (e.g. Display 2 instead of default h1).
- * Never hardcode hex, font families, or type scales in components.
+ * Guild & Grain design tokens — Figma Collection 1 + text styles.
+ * Shared by every component via CSS vars and Tailwind utilities.
+ * Component-specific layout stays in co-located *.css files.
+ *
+ * Colors (Tailwind): bg-primary, text-text-primary, border-stroke, …
+ * Colors (CSS):      var(--color-primary), var(--color-text-primary), …
+ * Text (Tailwind):   text-display-1, text-heading-h2, text-body, text-ui-button, …
+ * Text (CSS):        var(--text-display-1-*), or @utility classes above
  */
+
+/* ——— Figma color collection + Tailwind theme ——— */
 
 @theme inline {
   --font-display: var(--font-bebas-neue);
   --font-sans: var(--font-plus-jakarta);
 
-  /* Brand & surface (Figma Collection 1) */
+  /* Collection 1 — exact Figma tokens */
   --color-primary: #8b451f;
   --color-secondary: #c48a5a;
   --color-background: #171411;
-  --color-navbar: #211c18;
   --color-card: #211c18;
-  --color-accent: #c58b45;
-  --color-hero-accent: #945330; /* hero headline highlight */
+  --color-text-primary: #f4e9d8;
+  --color-text-secondary: #b8aa99;
   --color-stroke: #3a3028;
-  --color-badge: #e85a2a; /* nav wishlist/cart notification */
+  --color-accent: #c58b45;
 
-  /* Semantic aliases */
-  --color-foreground: #f4e9d8; /* Figma: text-primary */
-  --color-muted: #b8aa99; /* Figma: text-secondary */
-  --color-border: #3a3028; /* Figma: stroke */
+  /* Semantic aliases (same values — for Tailwind ergonomics) */
+  --color-foreground: var(--color-text-primary);
+  --color-muted: var(--color-text-secondary);
+  --color-border: var(--color-stroke);
+  --color-navbar: var(--color-card);
 }
 
-/* ——— Display ——— */
+/* ——— Text style VALUES (use from any CSS file) ——— */
+
+:root {
+  /* Display / Display 1 */
+  --text-display-1-family: var(--font-display);
+  --text-display-1-weight: 400;
+  --text-display-1-size: 72px;
+  --text-display-1-line: 60px;
+  --text-display-1-tracking: 0%;
+
+  /* Display / Display 2 */
+  --text-display-2-family: var(--font-display);
+  --text-display-2-weight: 400;
+  --text-display-2-size: 56px;
+  --text-display-2-line: 54px;
+  --text-display-2-tracking: 0%;
+
+  /* Heading / H1–H6 */
+  --text-heading-h1-family: var(--font-display);
+  --text-heading-h1-weight: 400;
+  --text-heading-h1-size: 48px;
+  --text-heading-h1-tracking: 0%;
+
+  --text-heading-h2-family: var(--font-display);
+  --text-heading-h2-weight: 400;
+  --text-heading-h2-size: 40px;
+  --text-heading-h2-line: 40px;
+  --text-heading-h2-tracking: 0%;
+
+  --text-heading-h3-family: var(--font-display);
+  --text-heading-h3-weight: 400;
+  --text-heading-h3-size: 32px;
+  --text-heading-h3-line: 28px;
+  --text-heading-h3-tracking: 0%;
+
+  --text-heading-h4-family: var(--font-display);
+  --text-heading-h4-weight: 400;
+  --text-heading-h4-size: 26px;
+  --text-heading-h4-tracking: 0%;
+
+  --text-heading-h5-family: var(--font-display);
+  --text-heading-h5-weight: 400;
+  --text-heading-h5-size: 22px;
+  --text-heading-h5-tracking: 0%;
+
+  --text-heading-h6-family: var(--font-display);
+  --text-heading-h6-weight: 400;
+  --text-heading-h6-size: 18px;
+  --text-heading-h6-tracking: 0%;
+
+  /* Body */
+  --text-body-large-family: var(--font-sans);
+  --text-body-large-weight: 400;
+  --text-body-large-size: 18px;
+  --text-body-large-tracking: 0%;
+
+  --text-body-family: var(--font-sans);
+  --text-body-weight: 400;
+  --text-body-size: 16px;
+  --text-body-tracking: 0%;
+
+  --text-body-small-family: var(--font-sans);
+  --text-body-small-weight: 400;
+  --text-body-small-size: 14px;
+  --text-body-small-tracking: 0%;
+
+  /* UI */
+  --text-ui-caption-family: var(--font-sans);
+  --text-ui-caption-weight: 400;
+  --text-ui-caption-size: 12px;
+  --text-ui-caption-tracking: 0%;
+
+  --text-ui-overline-family: var(--font-sans);
+  --text-ui-overline-weight: 600;
+  --text-ui-overline-size: 12px;
+  --text-ui-overline-tracking: 0%;
+
+  --text-ui-button-large-family: var(--font-sans);
+  --text-ui-button-large-weight: 600;
+  --text-ui-button-large-size: 16px;
+  --text-ui-button-large-tracking: 0%;
+
+  --text-ui-button-family: var(--font-sans);
+  --text-ui-button-weight: 600;
+  --text-ui-button-size: 14px;
+  --text-ui-button-tracking: 0%;
+
+  --text-ui-button-small-family: var(--font-sans);
+  --text-ui-button-small-weight: 600;
+  --text-ui-button-small-size: 12px;
+  --text-ui-button-small-tracking: 0%;
+
+  --text-ui-navigation-family: var(--font-sans);
+  --text-ui-navigation-weight: 500;
+  --text-ui-navigation-size: 14px;
+  --text-ui-navigation-tracking: 0%;
+
+  --text-ui-label-family: var(--font-sans);
+  --text-ui-label-weight: 600;
+  --text-ui-label-size: 13px;
+  --text-ui-label-tracking: 0%;
+
+  --text-ui-price-large-family: var(--font-sans);
+  --text-ui-price-large-weight: 700;
+  --text-ui-price-large-size: 24px;
+  --text-ui-price-large-tracking: 0%;
+
+  --text-ui-price-family: var(--font-sans);
+  --text-ui-price-weight: 700;
+  --text-ui-price-size: 18px;
+  --text-ui-price-tracking: 0%;
+}
+
+/* ——— Text style utilities (Tailwind class names) ——— */
 
 @utility text-display-1 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 72px;
-  line-height: 60px;
-  letter-spacing: 0%;
+  font-family: var(--text-display-1-family);
+  font-weight: var(--text-display-1-weight);
+  font-size: var(--text-display-1-size);
+  line-height: var(--text-display-1-line);
+  letter-spacing: var(--text-display-1-tracking);
 }
 
 @utility text-display-2 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 56px;
-  line-height: 54px;
-  letter-spacing: 0%;
+  font-family: var(--text-display-2-family);
+  font-weight: var(--text-display-2-weight);
+  font-size: var(--text-display-2-size);
+  line-height: var(--text-display-2-line);
+  letter-spacing: var(--text-display-2-tracking);
 }
 
-/* ——— Headings ——— */
-
 @utility text-heading-h1 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 48px;
-  letter-spacing: 0%;
+  font-family: var(--text-heading-h1-family);
+  font-weight: var(--text-heading-h1-weight);
+  font-size: var(--text-heading-h1-size);
+  letter-spacing: var(--text-heading-h1-tracking);
 }
 
 @utility text-heading-h2 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 40px;
-  letter-spacing: 0%;
+  font-family: var(--text-heading-h2-family);
+  font-weight: var(--text-heading-h2-weight);
+  font-size: var(--text-heading-h2-size);
+  line-height: var(--text-heading-h2-line);
+  letter-spacing: var(--text-heading-h2-tracking);
 }
 
 @utility text-heading-h3 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 28px;
-  letter-spacing: 0%;
+  font-family: var(--text-heading-h3-family);
+  font-weight: var(--text-heading-h3-weight);
+  font-size: var(--text-heading-h3-size);
+  line-height: var(--text-heading-h3-line);
+  letter-spacing: var(--text-heading-h3-tracking);
 }
 
 @utility text-heading-h4 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 26px;
-  letter-spacing: 0%;
+  font-family: var(--text-heading-h4-family);
+  font-weight: var(--text-heading-h4-weight);
+  font-size: var(--text-heading-h4-size);
+  letter-spacing: var(--text-heading-h4-tracking);
 }
 
 @utility text-heading-h5 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 22px;
-  letter-spacing: 0%;
+  font-family: var(--text-heading-h5-family);
+  font-weight: var(--text-heading-h5-weight);
+  font-size: var(--text-heading-h5-size);
+  letter-spacing: var(--text-heading-h5-tracking);
 }
 
 @utility text-heading-h6 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 18px;
-  letter-spacing: 0%;
+  font-family: var(--text-heading-h6-family);
+  font-weight: var(--text-heading-h6-weight);
+  font-size: var(--text-heading-h6-size);
+  letter-spacing: var(--text-heading-h6-tracking);
 }
 
-/* ——— Body ——— */
-
 @utility text-body-large {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 18px;
-  letter-spacing: 0%;
+  font-family: var(--text-body-large-family);
+  font-weight: var(--text-body-large-weight);
+  font-size: var(--text-body-large-size);
+  letter-spacing: var(--text-body-large-tracking);
 }
 
 @utility text-body {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 16px;
-  letter-spacing: 0%;
+  font-family: var(--text-body-family);
+  font-weight: var(--text-body-weight);
+  font-size: var(--text-body-size);
+  letter-spacing: var(--text-body-tracking);
 }
 
 @utility text-body-small {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 14px;
-  letter-spacing: 0%;
+  font-family: var(--text-body-small-family);
+  font-weight: var(--text-body-small-weight);
+  font-size: var(--text-body-small-size);
+  letter-spacing: var(--text-body-small-tracking);
 }
 
-/* ——— UI ——— */
-
 @utility text-ui-caption {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 12px;
-  letter-spacing: 0%;
+  font-family: var(--text-ui-caption-family);
+  font-weight: var(--text-ui-caption-weight);
+  font-size: var(--text-ui-caption-size);
+  letter-spacing: var(--text-ui-caption-tracking);
 }
 
 @utility text-ui-overline {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 0%;
+  font-family: var(--text-ui-overline-family);
+  font-weight: var(--text-ui-overline-weight);
+  font-size: var(--text-ui-overline-size);
+  letter-spacing: var(--text-ui-overline-tracking);
 }
 
 @utility text-ui-button-large {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 0%;
+  font-family: var(--text-ui-button-large-family);
+  font-weight: var(--text-ui-button-large-weight);
+  font-size: var(--text-ui-button-large-size);
+  letter-spacing: var(--text-ui-button-large-tracking);
 }
 
 @utility text-ui-button {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0%;
+  font-family: var(--text-ui-button-family);
+  font-weight: var(--text-ui-button-weight);
+  font-size: var(--text-ui-button-size);
+  letter-spacing: var(--text-ui-button-tracking);
 }
 
 @utility text-ui-button-small {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 0%;
+  font-family: var(--text-ui-button-small-family);
+  font-weight: var(--text-ui-button-small-weight);
+  font-size: var(--text-ui-button-small-size);
+  letter-spacing: var(--text-ui-button-small-tracking);
 }
 
 @utility text-ui-navigation {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 0%;
+  font-family: var(--text-ui-navigation-family);
+  font-weight: var(--text-ui-navigation-weight);
+  font-size: var(--text-ui-navigation-size);
+  letter-spacing: var(--text-ui-navigation-tracking);
 }
 
 @utility text-ui-label {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0%;
+  font-family: var(--text-ui-label-family);
+  font-weight: var(--text-ui-label-weight);
+  font-size: var(--text-ui-label-size);
+  letter-spacing: var(--text-ui-label-tracking);
 }
 
 @utility text-ui-price-large {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 24px;
-  letter-spacing: 0%;
+  font-family: var(--text-ui-price-large-family);
+  font-weight: var(--text-ui-price-large-weight);
+  font-size: var(--text-ui-price-large-size);
+  letter-spacing: var(--text-ui-price-large-tracking);
 }
 
 @utility text-ui-price {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: 0%;
+  font-family: var(--text-ui-price-family);
+  font-weight: var(--text-ui-price-weight);
+  font-size: var(--text-ui-price-size);
+  letter-spacing: var(--text-ui-price-tracking);
 }
