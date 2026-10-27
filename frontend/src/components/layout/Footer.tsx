@@ -28,7 +28,7 @@ function FooterLinkColumn({
 }
 
 export function Footer() {
-  const { catalog } = navigation.footer;
+  const { catalog, journal } = navigation.footer;
   const mailto = `mailto:${siteConfig.email}`;
 
   return (
@@ -54,6 +54,7 @@ export function Footer() {
           </div>
 
           <FooterLinkColumn title={catalog.title} links={catalog.links} />
+          <FooterLinkColumn title={journal.title} links={journal.links} />
 
           <div>
             <h3 className="footer-heading">Contact</h3>

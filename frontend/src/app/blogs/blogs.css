@@ -1,0 +1,9 @@
+.blogs-eyebrow {
+  margin: 0;
+  font-family: var(--text-ui-overline-family);
+  font-weight: var(--text-ui-overline-weight);
+  font-size: var(--text-ui-overline-size);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}

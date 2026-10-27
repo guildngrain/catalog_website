@@ -35,7 +35,8 @@ src/
 ├── config/
 │   ├── site.ts             # Site metadata, contact email
 │   ├── navigation.ts       # Nav structure
-│   ├── catalog.ts          # Static catalog categories
+│   ├── catalog.ts          # Static catalog categories + products
+│   ├── blog.ts             # Static blog posts
 │   └── hero.ts             # Hero copy / asset paths
 ├── hooks/                  # Custom React hooks
 ├── types/                  # Shared TypeScript types
