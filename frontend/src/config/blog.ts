@@ -31,6 +31,170 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "leather-jacket-lifetime-investment",
+    title: "Why a Leather Jacket Lasts a Lifetime (And Why That’s a Better Investment)",
+    excerpt:
+      "Fast fashion fades. Real leather improves. Here’s why a well-made jacket pays for itself in years of wear, character, and cost-per-wear.",
+    coverImage: "/blog/leather-jacket-lifetime/01-lifetime-patina.jpg",
+    publishedAt: "2026-10-27",
+    readTime: "6 min read",
+    sections: [
+      {
+        id: "intro",
+        image: "/blog/leather-jacket-lifetime/01-lifetime-patina.jpg",
+        imageAlt: "A patina-rich leather jacket beside a newer hide piece",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Most jackets are temporary. Trends shift, seams fail, fabric pills, and the piece is gone within a few seasons. A properly made leather jacket works the opposite way: the more you wear it, the more it becomes yours.",
+          },
+          {
+            type: "paragraph",
+            text: "At Guild & Grain, we build for that long arc—hides and construction meant to survive years of real life. Buying leather is less about a single outfit and more about owning something that keeps returning value every time you put it on.",
+          },
+        ],
+      },
+      {
+        id: "aging",
+        image: "/blog/leather-jacket-lifetime/02-aging-beauty.jpg",
+        imageAlt: "Close-up of leather developing a rich natural patina",
+        blocks: [
+          {
+            type: "heading",
+            text: "It Doesn’t Expire—It Evolves",
+          },
+          {
+            type: "paragraph",
+            text: "Synthetic coats often look best on day one. Full-grain leather looks best after years. Soft creases, deeper tone, and a lived-in sheen—called patina—are not damage. They are the record of your wear.",
+          },
+          {
+            type: "list",
+            items: [
+              "Durability: Quality hides resist abrasion far better than thin fashion fabrics.",
+              "Repairability: Stitching, zips, and linings can be serviced; the shell often outlasts its hardware.",
+              "Character: No two jackets age the same, so your piece becomes genuinely personal.",
+              "Fewer replacements: One lasting jacket replaces a stack of short-lived outerwear buys.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "That is the quiet economy of leather: you stop shopping for the same category over and over.",
+          },
+        ],
+      },
+      {
+        id: "investment",
+        image: "/blog/leather-jacket-lifetime/04-heirloom.jpg",
+        imageAlt: "Leather jacket styled as an heirloom piece with artisan tools",
+        blocks: [
+          {
+            type: "heading",
+            text: "Think Cost-Per-Wear, Not Checkout Price",
+          },
+          {
+            type: "paragraph",
+            text: "An inexpensive jacket worn ten times is expensive. A stronger leather jacket worn hundreds of times becomes one of the cheapest pieces in your wardrobe—measured honestly.",
+          },
+          {
+            type: "list",
+            items: [
+              "Divide once, wear often: Higher upfront cost spreads across years of weekly use.",
+              "Season-proof staple: Leather bridges cool evenings, travel days, and dressed-down nights out.",
+              "Resale & heirloom value: Well-kept leather can be passed on or kept in rotation for decades.",
+              "Less waste: Buying fewer, better jackets is kinder to your closet and the planet than constant turnover.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "If you want a piece that still looks intentional five or fifteen years from now, start with honest leather and solid make—then wear it without saving it for “special.” Lifetime jackets are made by living in them.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "timeless-leather-classic",
+    title: "The Timeless Classic: Why Leather Jackets Never Go Out of Style",
+    excerpt:
+      "From cafe racers to bikers, leather has stayed relevant for generations. Here’s why the silhouette endures—and how to choose a classic that stays current.",
+    coverImage: "/blog/timeless-leather-classic/05-timeless-silhouette.jpg",
+    publishedAt: "2026-10-27",
+    readTime: "6 min read",
+    sections: [
+      {
+        id: "intro",
+        image: "/blog/timeless-leather-classic/05-timeless-silhouette.jpg",
+        imageAlt: "A classic leather jacket silhouette in cinematic evening light",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Trends rotate. Leather remains. For decades, the leather jacket has moved from motorcycle culture to music stages to everyday wardrobes without losing its edge—or its usefulness.",
+          },
+          {
+            type: "paragraph",
+            text: "That staying power is not nostalgia alone. Classic leather cuts are simple, adaptable, and grounded in function. At Guild & Grain, we lean into those silhouettes because they still earn their place in a modern closet.",
+          },
+        ],
+      },
+      {
+        id: "everyday",
+        image: "/blog/timeless-leather-classic/03-everyday-classic.jpg",
+        imageAlt: "Leather biker jacket worn as an everyday timeless look",
+        blocks: [
+          {
+            type: "heading",
+            text: "A Classic Works on Ordinary Days",
+          },
+          {
+            type: "paragraph",
+            text: "True classics are not costume. They are the jacket you throw on with jeans, a knit, or a clean shirt without overthinking the outfit.",
+          },
+          {
+            type: "list",
+            items: [
+              "Clean lines age better than loud seasonal details.",
+              "Neutral tones—black, deep brown, cognac—pair with almost everything you already own.",
+              "A strong shoulder and balanced length keep the jacket looking intentional as styles around it change.",
+              "Hardware should support the design, not date it with oversized novelty.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "If a jacket only works for one very specific look, it is a trend. If it quietly improves most of your outfits, it is a classic.",
+          },
+        ],
+      },
+      {
+        id: "versatility",
+        image: "/blog/timeless-leather-classic/06-versatility.jpg",
+        imageAlt: "One leather jacket styled across casual and polished looks",
+        blocks: [
+          {
+            type: "heading",
+            text: "One Jacket, Many Chapters",
+          },
+          {
+            type: "paragraph",
+            text: "Versatility is why leather remains a smart long-term buy. The same piece can shift from weekend errands to evening plans without feeling like a costume change.",
+          },
+          {
+            type: "list",
+            items: [
+              "Casual: Tee, denim, boots—leather adds structure and polish.",
+              "Smart-casual: Over a shirt or fine knit for dinners and travel days.",
+              "Layering: Works across seasons as a mid-layer or outer shell.",
+              "Identity: A classic cut still leaves room for your own style—watches, scarves, footwear—without competing.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Browse Guild & Grain for silhouettes built to stay relevant, or email us if you want help picking a timeless cut for how you actually dress. Classics are not frozen in the past—they are ready for whatever comes next.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     slug: "leather-quality-guide",
     title: "How to Check Leather Quality: Grain, Origin, and Process",
     excerpt:
