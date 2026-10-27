@@ -28,7 +28,7 @@ function FooterLinkColumn({
 }
 
 export function Footer() {
-  const { shop, brand, help } = navigation.footer;
+  const { catalog, brand, help } = navigation.footer;
   const socials = Object.values(siteConfig.social);
 
   return (
@@ -69,7 +69,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <FooterLinkColumn title={shop.title} links={shop.links} />
+          <FooterLinkColumn title={catalog.title} links={catalog.links} />
           <FooterLinkColumn title={brand.title} links={brand.links} />
 
           <div>

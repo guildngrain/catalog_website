@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, Search, ShoppingBag } from "lucide-react";
+import { Search } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { BookmarkNavLink } from "./BookmarkNavLink";
 import { NavLinks } from "./NavLinks";
 import "./Navbar.css";
 
@@ -29,7 +30,7 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             <form
               role="search"
-              action="/shop"
+              action="/catalog"
               method="get"
               className="relative hidden w-48 lg:block xl:w-56"
             >
@@ -41,26 +42,19 @@ export function Navbar() {
                 type="search"
                 name="q"
                 placeholder="Search"
-                aria-label="Search products"
+                aria-label="Search catalog"
                 className="search-input h-10 w-full rounded-full border border-border bg-card pr-4 pl-10 text-foreground placeholder:text-muted"
               />
             </form>
 
-            <Link
-              href="/wishlist"
-              className="nav-icon relative"
-              aria-label="Wishlist, 0 items"
-            >
-              <Heart className="size-5" strokeWidth={1.5} />
-              <span className="badge absolute -top-1.5 -right-2">0</span>
-            </Link>
+            <BookmarkNavLink />
 
-            <Link href="/cart" className="cart-pill" aria-label="Cart, $0.0">
-              <span>$0.0</span>
-              <span className="relative">
-                <ShoppingBag className="size-5" strokeWidth={1.5} />
-                <span className="badge absolute -top-1.5 -right-2">0</span>
-              </span>
+            <Link
+              href="/contact"
+              className="contact-pill"
+              aria-label="Contact us"
+            >
+              Contact Us
             </Link>
           </div>
         </nav>

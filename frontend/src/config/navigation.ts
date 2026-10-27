@@ -11,7 +11,7 @@ export interface FooterColumn {
 export interface NavConfig {
   main: NavItem[];
   footer: {
-    shop: FooterColumn;
+    catalog: FooterColumn;
     brand: FooterColumn;
     help: FooterColumn;
   };
@@ -21,19 +21,19 @@ export interface NavConfig {
 export const navigation: NavConfig = {
   main: [
     { label: "Home", href: "/" },
-    { label: "Shop", href: "/shop" },
+    { label: "Catalog", href: "/catalog" },
     { label: "Blogs", href: "/blogs" },
   ],
   footer: {
-    shop: {
-      title: "Shop",
+    catalog: {
+      title: "Catalog",
       links: [
-        { label: "New Arrivals", href: "/shop/new-arrivals" },
-        { label: "Men's Leather Jackets", href: "/shop/mens-leather-jackets" },
-        { label: "Best Sellers", href: "/shop/best-sellers" },
-        { label: "Gift for Him", href: "/shop/gift-for-him" },
-        { label: "Men's Biker Jackets", href: "/shop/mens-biker-jackets" },
-        { label: "Men's Cowboys Jackets", href: "/shop/mens-cowboys-jackets" },
+        { label: "New Arrivals", href: "/catalog/new-arrivals" },
+        { label: "Men's Leather Jackets", href: "/catalog/mens-leather-jackets" },
+        { label: "Best Sellers", href: "/catalog/best-sellers" },
+        { label: "Gift for Him", href: "/catalog/gift-for-him" },
+        { label: "Men's Biker Jackets", href: "/catalog/mens-biker-jackets" },
+        { label: "Men's Cowboys Jackets", href: "/catalog/mens-cowboys-jackets" },
       ],
     },
     brand: {

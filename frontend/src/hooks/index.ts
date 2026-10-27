@@ -1,1 +1,1 @@
-export {};
+export { useBookmarks } from "./useBookmarks";

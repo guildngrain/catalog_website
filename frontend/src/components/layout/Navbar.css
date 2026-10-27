@@ -71,10 +71,10 @@
   padding-inline: 0.2rem;
 }
 
-.cart-pill {
+.contact-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
   height: 2.5rem;
   padding-inline: 1rem;
   border-radius: 9999px;
@@ -84,12 +84,12 @@
   font-family: var(--text-ui-navigation-family);
   font-weight: var(--text-ui-navigation-weight);
   font-size: var(--text-ui-navigation-size);
-  transition: border-color 150ms ease;
+  transition: border-color 150ms ease, color 150ms ease;
 }
 
-.cart-pill:hover {
+.contact-pill:hover {
   border-color: var(--color-accent);
-  color: var(--color-text-primary);
+  color: var(--color-accent);
 }
 
 @media (orientation: landscape) {

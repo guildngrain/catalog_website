@@ -13,6 +13,6 @@ export const heroConfig = {
   },
   secondaryCta: {
     label: "Explore Collection",
-    href: "/shop",
+    href: "/catalog",
   },
 } as const;
