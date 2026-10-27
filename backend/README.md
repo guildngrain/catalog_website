@@ -55,4 +55,14 @@ docker compose down -v        # stop + wipe data volumes
 npm run dev                   # develop (hot reload)
 npm run build && npm start    # production-style
 npm run seed                  # demo seed script (optional)
+npx medusa exec ./src/scripts/seed-custom-modules.ts
 ```
+
+## Custom modules
+
+See [CUSTOM_MODULES.md](./CUSTOM_MODULES.md) for blog CMS, custom design uploads (WebP), and categorized order messages/quotes.
+
+Default admin (local):
+
+- Email: `admin@gandg.local`
+- Password: `supersecret`
