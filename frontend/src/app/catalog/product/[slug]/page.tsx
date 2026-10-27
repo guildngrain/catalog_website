@@ -85,7 +85,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <h1 className="mt-2 text-heading-h2 text-foreground">
               {product.title}
             </h1>
-            <p className="mt-3 product-detail-price">{product.priceLabel}</p>
             <p className="mt-6 text-body text-muted">{product.description}</p>
 
             <dl className="product-detail-specs mt-6">

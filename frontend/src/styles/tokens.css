@@ -173,8 +173,8 @@
 @utility text-heading-h2 {
   font-family: var(--text-heading-h2-family);
   font-weight: var(--text-heading-h2-weight);
-  font-size: var(--text-heading-h2-size);
-  line-height: var(--text-heading-h2-line);
+  font-size: clamp(1.75rem, 6vw, var(--text-heading-h2-size));
+  line-height: 1.1;
   letter-spacing: var(--text-heading-h2-tracking);
 }
 

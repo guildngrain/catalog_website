@@ -84,7 +84,7 @@
 .product-card-title {
   color: var(--color-text-primary);
   font-family: var(--text-body-family);
-  font-size: var(--text-body-size);
+  font-size: clamp(0.85rem, 3.4vw, var(--text-body-size));
   font-weight: 500;
   text-decoration: none;
   line-height: 1.35;
@@ -92,11 +92,4 @@
 
 .product-card-title:hover {
   color: var(--color-accent);
-}
-
-.product-card-price {
-  margin: 0;
-  font-family: var(--text-ui-price-family, var(--text-body-family));
-  font-size: var(--text-body-small-size);
-  color: var(--color-secondary);
 }

@@ -16,7 +16,6 @@ export type CatalogProduct = {
   categories: string[];
   description: string;
   image: string;
-  priceLabel: string;
   featured?: boolean;
   isNew?: boolean;
 };
@@ -83,7 +82,6 @@ export const catalogProducts: CatalogProduct[] = [
     description:
       "Asymmetric zip, quilted shoulders, and polished hardware on full-grain black leather.",
     image: "/catalog/products/biker-men-black.jpg",
-    priceLabel: "From $480",
     featured: true,
   },
   {
@@ -97,7 +95,6 @@ export const catalogProducts: CatalogProduct[] = [
     description:
       "The same road-ready biker cut in warm cognac-brown vegetable-tanned hide.",
     image: "/catalog/products/biker-men-brown.jpg",
-    priceLabel: "From $480",
   },
   {
     id: "biker-women-black",
@@ -115,7 +112,6 @@ export const catalogProducts: CatalogProduct[] = [
     description:
       "Fitted women's biker with a nipped waist, asymmetric zip, and matte black leather.",
     image: "/catalog/products/biker-women-black.jpg",
-    priceLabel: "From $460",
     featured: true,
     isNew: true,
   },
@@ -130,7 +126,6 @@ export const catalogProducts: CatalogProduct[] = [
     description:
       "Women's classic biker in rich chestnut brown with silver-tone zippers.",
     image: "/catalog/products/biker-women-brown.jpg",
-    priceLabel: "From $460",
   },
 
   // 2. Long Coat
@@ -145,7 +140,6 @@ export const catalogProducts: CatalogProduct[] = [
     description:
       "Knee-length overcoat in dense black leather with a clean lapel and storm flap.",
     image: "/catalog/products/longcoat-men-black.jpg",
-    priceLabel: "From $720",
     featured: true,
   },
   {
@@ -159,7 +153,6 @@ export const catalogProducts: CatalogProduct[] = [
     description:
       "Floor-skimming women's leather coat with a belt waist and soft black sheen.",
     image: "/catalog/products/longcoat-women-black.jpg",
-    priceLabel: "From $690",
     isNew: true,
   },
   {
@@ -173,7 +166,6 @@ export const catalogProducts: CatalogProduct[] = [
     description:
       "Long belted coat in tobacco-brown leather for layered winter wear.",
     image: "/catalog/products/longcoat-women-brown.jpg",
-    priceLabel: "From $690",
     isNew: true,
   },
 
@@ -189,7 +181,6 @@ export const catalogProducts: CatalogProduct[] = [
     description:
       "Western yoke, snap front, and pointed flaps on rugged black cowhide.",
     image: "/catalog/products/cowboy-men-black.jpg",
-    priceLabel: "From $440",
   },
   {
     id: "cowboy-men-brown",
@@ -206,7 +197,6 @@ export const catalogProducts: CatalogProduct[] = [
     description:
       "Heritage cowboy cut in sun-worn saddle brown with contrast stitching.",
     image: "/catalog/products/cowboy-men-brown.jpg",
-    priceLabel: "From $440",
     featured: true,
   },
 
@@ -227,7 +217,6 @@ export const catalogProducts: CatalogProduct[] = [
     description:
       "Slim upright collar, clean front zip, and minimal hardware in black leather.",
     image: "/catalog/products/caferacer-men-black.jpg",
-    priceLabel: "From $450",
     featured: true,
   },
   {
@@ -241,7 +230,6 @@ export const catalogProducts: CatalogProduct[] = [
     description:
       "Streamlined women's cafe racer with a stand collar and slim black leather body.",
     image: "/catalog/products/caferacer-women-black.jpg",
-    priceLabel: "From $430",
     isNew: true,
   },
 
@@ -257,7 +245,6 @@ export const catalogProducts: CatalogProduct[] = [
     description:
       "Ribbed cuffs and hem on a soft brown leather bomber with a zip front.",
     image: "/catalog/products/bomber-men-brown.jpg",
-    priceLabel: "From $420",
     isNew: true,
   },
   {
@@ -271,7 +258,6 @@ export const catalogProducts: CatalogProduct[] = [
     description:
       "Cropped women's bomber in black leather with knit trim and a relaxed shoulder.",
     image: "/catalog/products/bomber-women-black.jpg",
-    priceLabel: "From $400",
     featured: true,
   },
 
@@ -287,7 +273,6 @@ export const catalogProducts: CatalogProduct[] = [
     description:
       "Button-front trucker with chest pockets and a straight black leather body.",
     image: "/catalog/products/trucker-men-black.jpg",
-    priceLabel: "From $410",
   },
   {
     id: "trucker-women-brown",
@@ -300,7 +285,6 @@ export const catalogProducts: CatalogProduct[] = [
     description:
       "Women's leather trucker in warm brown with a slightly cropped hem.",
     image: "/catalog/products/trucker-women-brown.jpg",
-    priceLabel: "From $395",
     isNew: true,
   },
 
@@ -316,7 +300,6 @@ export const catalogProducts: CatalogProduct[] = [
     description:
       "Sharp single-breasted leather blazer with notch lapels in deep black.",
     image: "/catalog/products/blazer-women-black.jpg",
-    priceLabel: "From $510",
     featured: true,
     isNew: true,
   },
@@ -331,7 +314,6 @@ export const catalogProducts: CatalogProduct[] = [
     description:
       "Tailored men's leather blazer in espresso brown for polished casual wear.",
     image: "/catalog/products/blazer-men-brown.jpg",
-    priceLabel: "From $540",
   },
 ];
 

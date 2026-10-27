@@ -65,7 +65,6 @@ export function ProductCard({ product }: ProductCardProps) {
         >
           {product.title}
         </Link>
-        <p className="product-card-price">{product.priceLabel}</p>
       </div>
     </article>
   );

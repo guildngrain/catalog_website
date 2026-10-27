@@ -7,7 +7,7 @@ interface SectionProps extends BaseComponentProps {
 
 export function Section({ className, children }: SectionProps) {
   return (
-    <section className={cn("py-16 sm:py-24", className)}>
+    <section className={cn("py-10 sm:py-16 lg:py-24", className)}>
       {children}
     </section>
   );
