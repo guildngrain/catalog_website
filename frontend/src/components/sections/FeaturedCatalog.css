@@ -1,0 +1,63 @@
+.featured-catalog-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+}
+
+.featured-catalog-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  padding-inline: 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid var(--color-stroke);
+  background-color: var(--color-card);
+  color: var(--color-text-primary);
+  font-family: var(--text-ui-navigation-family);
+  font-size: var(--text-ui-navigation-size);
+  text-decoration: none;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+
+.featured-catalog-more:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.featured-catalog-skeleton {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 1024px) {
+  .featured-catalog-skeleton {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.featured-catalog-skeleton-card {
+  aspect-ratio: 3 / 4;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-stroke);
+  background: linear-gradient(
+    120deg,
+    var(--color-card) 0%,
+    color-mix(in srgb, var(--color-stroke) 55%, var(--color-card)) 50%,
+    var(--color-card) 100%
+  );
+  background-size: 200% 100%;
+  animation: featured-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes featured-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}

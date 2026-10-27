@@ -1,25 +1,10 @@
 import type { MetadataRoute } from "next";
-import { catalogCategories } from "@/config/catalog";
+import { catalogProducts } from "@/config/catalog";
 import { siteConfig } from "@/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url.replace(/\/$/, "");
   const now = new Date();
-
-  const catalogEntries: MetadataRoute.Sitemap = [
-    {
-      url: `${base}/catalog`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    ...catalogCategories.map((category) => ({
-      url: `${base}/catalog/${category.slug}`,
-      lastModified: now,
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    })),
-  ];
 
   return [
     {
@@ -28,7 +13,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
-    ...catalogEntries,
+    {
+      url: `${base}/catalog`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    ...catalogProducts.map((product) => ({
+      url: `${base}/catalog/product/${product.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
     {
       url: `${base}/contact`,
       lastModified: now,

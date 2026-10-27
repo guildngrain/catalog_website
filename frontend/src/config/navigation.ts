@@ -28,12 +28,14 @@ export const navigation: NavConfig = {
     catalog: {
       title: "Catalog",
       links: [
-        { label: "New Arrivals", href: "/catalog/new-arrivals" },
-        { label: "Men's Leather Jackets", href: "/catalog/mens-leather-jackets" },
-        { label: "Best Sellers", href: "/catalog/best-sellers" },
-        { label: "Gift for Him", href: "/catalog/gift-for-him" },
-        { label: "Men's Biker Jackets", href: "/catalog/mens-biker-jackets" },
-        { label: "Men's Cowboys Jackets", href: "/catalog/mens-cowboys-jackets" },
+        { label: "All Pieces", href: "/catalog" },
+        { label: "New Arrivals", href: "/catalog?new=1" },
+        { label: "Featured", href: "/catalog?featured=1" },
+        { label: "Men", href: "/catalog?gender=men" },
+        { label: "Women", href: "/catalog?gender=women" },
+        { label: "Black Leather", href: "/catalog?color=Black" },
+        { label: "Brown Leather", href: "/catalog?color=Brown" },
+        { label: "Biker Jackets", href: "/catalog?type=Classic%20Biker" },
       ],
     },
     brand: {

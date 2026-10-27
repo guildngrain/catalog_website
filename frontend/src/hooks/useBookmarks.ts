@@ -11,7 +11,8 @@ import {
 type Listener = () => void;
 
 const listeners = new Set<Listener>();
-let cachedBookmarks: BookmarkItem[] = [];
+const EMPTY_BOOKMARKS: BookmarkItem[] = [];
+let cachedBookmarks: BookmarkItem[] = EMPTY_BOOKMARKS;
 let cacheReady = false;
 
 function subscribe(listener: Listener) {
@@ -39,7 +40,7 @@ function getSnapshot(): BookmarkItem[] {
 }
 
 function getServerSnapshot(): BookmarkItem[] {
-  return [];
+  return EMPTY_BOOKMARKS;
 }
 
 function persist(next: BookmarkItem[]) {
@@ -92,7 +93,7 @@ export function useBookmarks() {
 
   const clear = useCallback(() => {
     clearBookmarksCookie();
-    cachedBookmarks = [];
+    cachedBookmarks = EMPTY_BOOKMARKS;
     cacheReady = true;
     emitChange();
   }, []);
