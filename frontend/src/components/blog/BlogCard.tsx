@@ -5,78 +5,52 @@ import "./BlogCard.css";
 
 type BlogCardProps = {
   post: BlogPost;
-  variant?: "featured" | "grid";
+  index: number;
 };
 
 function formatDate(value: string) {
   return new Date(value).toLocaleDateString("en-US", {
     year: "numeric",
-    month: "short",
+    month: "long",
     day: "numeric",
   });
 }
 
-export function BlogCard({ post, variant = "grid" }: BlogCardProps) {
-  const dateLabel = formatDate(post.publishedAt);
+export function BlogCard({ post, index }: BlogCardProps) {
   const href = `/blogs/${post.slug}`;
-
-  if (variant === "featured") {
-    return (
-      <article className="blog-feature">
-        <Link href={href} className="blog-feature-media">
-          <Image
-            src={post.coverImage}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="blog-feature-image"
-          />
-          <span className="blog-feature-shade" aria-hidden />
-        </Link>
-
-        <div className="blog-feature-copy">
-          <p className="blog-feature-kicker">Featured story</p>
-          <p className="blog-feature-meta">
-            {dateLabel}
-            <span aria-hidden>·</span>
-            {post.readTime}
-          </p>
-          <h2 className="blog-feature-title">
-            <Link href={href}>{post.title}</Link>
-          </h2>
-          <p className="blog-feature-excerpt">{post.excerpt}</p>
-          <Link href={href} className="blog-feature-cta">
-            Read the story
-          </Link>
-        </div>
-      </article>
-    );
-  }
+  const number = String(index + 1).padStart(2, "0");
 
   return (
-    <article className="blog-tile">
-      <Link href={href} className="blog-tile-media">
+    <article className="blog-entry">
+      <Link href={href} className="blog-entry-media" aria-hidden tabIndex={-1}>
         <Image
           src={post.coverImage}
           alt=""
-          width={900}
-          height={600}
-          className="blog-tile-image"
+          width={960}
+          height={720}
+          className="blog-entry-image"
         />
       </Link>
-      <div className="blog-tile-body">
-        <p className="blog-tile-meta">
-          {dateLabel}
-          <span aria-hidden>·</span>
-          {post.readTime}
-        </p>
-        <h2 className="blog-tile-title">
+
+      <div className="blog-entry-content">
+        <div className="blog-entry-top">
+          <span className="blog-entry-number">{number}</span>
+          <p className="blog-entry-meta">
+            <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
+            <span className="blog-entry-dot" aria-hidden />
+            <span>{post.readTime}</span>
+          </p>
+        </div>
+
+        <h2 className="blog-entry-title">
           <Link href={href}>{post.title}</Link>
         </h2>
-        <p className="blog-tile-excerpt">{post.excerpt}</p>
-        <Link href={href} className="blog-tile-link">
-          Continue reading
+
+        <p className="blog-entry-excerpt">{post.excerpt}</p>
+
+        <Link href={href} className="blog-entry-cta">
+          Read article
+          <span aria-hidden>→</span>
         </Link>
       </div>
     </article>

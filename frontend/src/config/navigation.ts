@@ -22,7 +22,6 @@ export const navigation: NavConfig = {
     { label: "Home", href: "/" },
     { label: "Catalog", href: "/catalog" },
     { label: "Blogs", href: "/blogs" },
-    { label: "Contact", href: "/contact" },
   ],
   footer: {
     catalog: {
