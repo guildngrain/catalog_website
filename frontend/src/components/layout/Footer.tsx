@@ -77,13 +77,15 @@ export function Footer() {
               &copy; {new Date().getFullYear()} {siteConfig.name.toUpperCase()}.
               All rights reserved.
             </p>
-            <ul className="flex flex-wrap items-center justify-center gap-6">
-              {navigation.legal.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href}>{item.label}</Link>
-                </li>
-              ))}
-            </ul>
+            {navigation.legal.length > 0 ? (
+              <ul className="flex flex-wrap items-center justify-center gap-6">
+                {navigation.legal.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href}>{item.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
             <a href={mailto} className="footer-bar-email">
               Email us
             </a>

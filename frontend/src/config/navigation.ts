@@ -33,5 +33,5 @@ export const navigation: NavConfig = {
       links: [{ label: "Blogs", href: "/blogs" }],
     },
   },
-  legal: [{ label: "Sitemap", href: "/sitemap.xml" }],
+  legal: [],
 };
