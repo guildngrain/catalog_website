@@ -6,26 +6,10 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   locale: "en_US",
   logo: "/brand/logo.svg",
+  email: "guildngrain@gmail.com",
   author: {
     name: "Guild & Grain",
     url: "",
-  },
-  social: {
-    facebook: {
-      href: "https://facebook.com",
-      icon: "/social/facebook.svg",
-      label: "Facebook",
-    },
-    whatsapp: {
-      href: "https://wa.me/",
-      icon: "/social/whatsapp.svg",
-      label: "WhatsApp",
-    },
-    instagram: {
-      href: "https://instagram.com",
-      icon: "/social/instagram.svg",
-      label: "Instagram",
-    },
   },
 } as const;
 

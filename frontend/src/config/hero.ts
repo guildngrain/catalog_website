@@ -9,7 +9,7 @@ export const heroConfig = {
   body: "Rejecting fast fashion and disposable luxury. We craft only in numbered small batches using 100% certified traceable vegetable-tanned hides.",
   primaryCta: {
     label: "Request Bespoke Fit",
-    href: "/bespoke",
+    href: "/contact",
   },
   secondaryCta: {
     label: "Explore Collection",

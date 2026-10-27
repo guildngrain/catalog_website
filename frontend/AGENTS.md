@@ -33,7 +33,7 @@ src/
 ├── lib/
 │   └── utils.ts            # cn() helper (clsx + tailwind-merge)
 ├── config/
-│   ├── site.ts             # Site metadata, social links
+│   ├── site.ts             # Site metadata, contact email
 │   ├── navigation.ts       # Nav structure
 │   ├── catalog.ts          # Static catalog categories
 │   └── hero.ts             # Hero copy / asset paths
@@ -125,7 +125,7 @@ Shared visual values live in CSS tokens. **Component-specific layout/look lives 
 
 ### Configuration
 
-- Site-wide config (name, URL, socials) goes in `src/config/site.ts`
+- Site-wide config (name, URL, email) goes in `src/config/site.ts`
 - Navigation structure goes in `src/config/navigation.ts`
 - Design tokens (colors, fonts, type) go in `src/styles/tokens.css`
 - Shared types go in `src/types/`

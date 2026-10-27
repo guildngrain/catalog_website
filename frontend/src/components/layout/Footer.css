@@ -3,6 +3,25 @@
  * Colors & type from tokens.css only.
  */
 
+.footer-grid {
+  display: grid;
+  gap: 2.5rem;
+  padding-block: 3rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+}
+
 footer a {
   font-family: var(--text-ui-navigation-family);
   font-weight: var(--text-ui-navigation-weight);
@@ -20,6 +39,40 @@ footer a:hover {
   font-family: var(--text-body-small-family);
   font-size: var(--text-body-small-size);
   color: var(--color-text-primary);
+}
+
+.footer-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--color-text-primary);
+  font-family: var(--text-body-small-family);
+  font-size: var(--text-body-small-size);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.footer-email:hover {
+  color: var(--color-accent);
+}
+
+.footer-bar-email {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  padding-inline: 0.9rem;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--color-text-primary) 35%, transparent);
+  color: var(--color-text-primary);
+  font-family: var(--text-ui-navigation-family);
+  font-size: var(--text-ui-navigation-size);
+  text-decoration: none;
+}
+
+.footer-bar-email:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .footer-heading {
