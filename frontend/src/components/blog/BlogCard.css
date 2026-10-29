@@ -90,11 +90,18 @@
 
 .blog-entry-title {
   margin: 0;
-  max-width: 22ch;
+  max-width: 100%;
   font-family: var(--text-heading-h3-family);
   font-weight: var(--text-heading-h3-weight);
-  font-size: clamp(1.35rem, 3.2vw, 1.85rem);
-  line-height: 1.15;
+  font-size: clamp(1.2rem, 4.2vw, 1.85rem);
+  line-height: 1.2;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 768px) {
+  .blog-entry-title {
+    max-width: 22ch;
+  }
 }
 
 .blog-entry-title a {

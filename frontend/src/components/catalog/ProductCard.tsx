@@ -21,8 +21,8 @@ export function ProductCard({ product }: ProductCardProps) {
         <Image
           src={product.image}
           alt={product.title}
-          width={600}
-          height={800}
+          fill
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 280px"
           className="product-card-image"
         />
         {product.isNew ? <span className="product-card-badge">New</span> : null}

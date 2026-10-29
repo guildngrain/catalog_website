@@ -4,7 +4,7 @@
 
 .blog-hero {
   position: relative;
-  min-height: clamp(22rem, 68vh, 34rem);
+  min-height: clamp(18rem, 52vh, 34rem);
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -64,13 +64,20 @@
 
 .blog-title {
   margin: 0.85rem 0 0;
-  max-width: 18ch;
+  max-width: 100%;
   font-family: var(--text-heading-h2-family);
   font-weight: var(--text-heading-h2-weight);
-  font-size: clamp(1.85rem, 6.5vw, 3.25rem);
-  line-height: 1.05;
+  font-size: clamp(1.55rem, 6.5vw, 3.25rem);
+  line-height: 1.08;
   letter-spacing: var(--text-heading-h2-tracking);
   color: var(--color-text-primary);
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 768px) {
+  .blog-title {
+    max-width: 18ch;
+  }
 }
 
 .blog-meta {

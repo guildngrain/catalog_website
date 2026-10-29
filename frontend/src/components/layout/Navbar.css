@@ -242,10 +242,6 @@
   .site-header-logo-img {
     height: 2.75rem;
   }
-
-  .contact-pill--desktop {
-    display: inline-flex;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -263,6 +259,10 @@
   .site-header-search {
     display: block;
     width: 13rem;
+  }
+
+  .contact-pill--desktop {
+    display: inline-flex;
   }
 
   .nav-menu-toggle {

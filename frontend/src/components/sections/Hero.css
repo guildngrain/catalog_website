@@ -47,7 +47,7 @@
   position: relative;
   z-index: 0;
   display: flex;
-  min-height: min(72vh, 36rem);
+  min-height: min(68vh, 28rem);
   align-items: flex-end;
   overflow: hidden;
   background-color: var(--color-card);
@@ -55,6 +55,12 @@
   border-bottom-right-radius: var(--hero-radius);
   /* Hard clip — absolute Next/Image layers ignore radius alone in some cases */
   clip-path: inset(0 round 0 0 var(--hero-radius) var(--hero-radius));
+}
+
+@media (min-width: 640px) {
+  .hero-stage {
+    min-height: min(70vh, 34rem);
+  }
 }
 
 .hero-media {
@@ -214,37 +220,87 @@
 }
 
 @media (max-width: 1023px) {
+  .hero-tagline {
+    padding: 1rem 1rem 0.85rem;
+    font-size: clamp(1.15rem, 5.6vw, 1.75rem);
+  }
+
   .hero-media {
-    opacity: 0.4;
+    opacity: 0.35;
   }
 
   .hero-overlay {
     background: linear-gradient(
       180deg,
-      color-mix(in srgb, var(--color-card) 15%, transparent) 0%,
-      color-mix(in srgb, var(--color-card) 78%, transparent) 45%,
-      var(--color-card) 78%
+      color-mix(in srgb, var(--color-card) 25%, transparent) 0%,
+      color-mix(in srgb, var(--color-card) 82%, transparent) 42%,
+      var(--color-card) 72%
     );
   }
 
+  .hero-figure-woman,
+  .hero-figure-man {
+    display: none;
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: none;
+    padding: 1.5rem 1rem 2rem;
+    gap: 1rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.85rem, 9vw, 2.75rem);
+  }
+
+  .hero-body {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero-figure-woman,
+  .hero-figure-man {
+    display: block;
+  }
+
   .hero-figure-woman {
-    right: 26%;
+    right: 24%;
     bottom: 0;
-    width: min(46%, 12rem);
+    width: min(40%, 11rem);
   }
 
   .hero-figure-man {
     right: 2%;
     bottom: 0;
-    width: min(32%, 9rem);
+    width: min(28%, 8rem);
   }
 
-  .hero-copy {
-    max-width: none;
+  .hero-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: auto;
   }
 }
 
-@media (orientation: landscape) {
+/* Desktop composition — width-based, not orientation (phones break otherwise) */
+@media (min-width: 1024px) {
   .hero-stage {
     display: block;
     width: 100%;
@@ -262,9 +318,16 @@
     object-position: center;
   }
 
+  .hero-figure-woman,
+  .hero-figure-man {
+    display: block;
+  }
+
   .hero-figure-woman {
     left: calc(629 / 1440 * 100%);
+    right: auto;
     top: calc(52 / 555 * 100%);
+    bottom: auto;
     width: calc(376 / 1440 * 100%);
     height: calc(593 / 555 * 100%);
     object-fit: contain;
@@ -272,7 +335,9 @@
 
   .hero-figure-man {
     left: calc(1169 / 1440 * 100%);
+    right: auto;
     top: calc(65 / 555 * 100%);
+    bottom: auto;
     width: calc(250 / 1440 * 100%);
     height: calc(561 / 555 * 100%);
     object-fit: contain;
@@ -310,11 +375,8 @@
   }
 
   .hero-actions {
-    gap: calc(12 / var(--design-w) * 100vw);
-  }
-
-  .hero-actions {
     flex-direction: row;
+    gap: calc(12 / var(--design-w) * 100vw);
   }
 
   .hero-btn-primary,

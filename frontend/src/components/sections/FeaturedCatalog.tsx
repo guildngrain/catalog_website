@@ -13,8 +13,16 @@ import "./FeaturedCatalog.css";
 
 const ROW_COUNT = 4;
 
+function initialRow(): CatalogProduct[] {
+  const featured = catalogProducts.filter((product) => product.featured);
+  if (featured.length >= ROW_COUNT) {
+    return featured.slice(0, ROW_COUNT);
+  }
+  return catalogProducts.slice(0, ROW_COUNT);
+}
+
 export function FeaturedCatalog() {
-  const [items, setItems] = useState<CatalogProduct[]>([]);
+  const [items, setItems] = useState<CatalogProduct[]>(initialRow);
 
   useEffect(() => {
     setItems(shuffleProducts(catalogProducts).slice(0, ROW_COUNT));
@@ -37,15 +45,7 @@ export function FeaturedCatalog() {
         </div>
 
         <div className="mt-10">
-          {items.length === 0 ? (
-            <div className="featured-catalog-skeleton" aria-hidden>
-              {Array.from({ length: ROW_COUNT }).map((_, index) => (
-                <div key={index} className="featured-catalog-skeleton-card" />
-              ))}
-            </div>
-          ) : (
-            <ProductGrid products={items} layout="row" />
-          )}
+          <ProductGrid products={items} layout="row" />
         </div>
       </Container>
     </Section>

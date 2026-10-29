@@ -1,8 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, Plus_Jakarta_Sans } from "next/font/google";
 import { Footer, Navbar } from "@/components/layout";
 import { siteConfig } from "@/config/site";
 import "@/styles/globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#171411",
+};
 
 const bebasNeue = Bebas_Neue({
   weight: "400",

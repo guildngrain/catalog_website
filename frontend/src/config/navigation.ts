@@ -21,6 +21,7 @@ export const navigation: NavConfig = {
   main: [
     { label: "Home", href: "/" },
     { label: "Catalog", href: "/catalog" },
+    { label: "About", href: "/about" },
     { label: "Blogs", href: "/blogs" },
   ],
   footer: {
@@ -30,7 +31,10 @@ export const navigation: NavConfig = {
     },
     journal: {
       title: "Journal",
-      links: [{ label: "Blogs", href: "/blogs" }],
+      links: [
+        { label: "Blogs", href: "/blogs" },
+        { label: "About Us", href: "/about" },
+      ],
     },
   },
   legal: [],
