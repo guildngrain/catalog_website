@@ -19,7 +19,15 @@ export function Hero() {
             fill
             priority
             sizes="100vw"
-            className="hero-bg"
+            className="hero-bg hero-bg--desktop"
+          />
+          <Image
+            src={heroConfig.backgroundMobile}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="hero-bg hero-bg--mobile"
           />
           <div className="hero-overlay" />
           <Image
