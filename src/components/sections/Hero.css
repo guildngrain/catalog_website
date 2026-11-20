@@ -230,7 +230,11 @@
   }
 
   .hero-stage {
-    min-height: min(72vh, 34rem);
+    /* Match header-image-mobile.png (804×556) — full image, no stretch */
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 804 / 556;
     align-items: center; /* vertical middle — stage is a row flex */
   }
 
@@ -242,19 +246,18 @@
     display: none;
   }
 
-  .hero-bg--mobile {
+  .hero-bg.hero-bg--mobile {
     display: block;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center center;
   }
 
   .hero-overlay {
     background: linear-gradient(
       180deg,
-      color-mix(in srgb, var(--color-card) 35%, transparent) 0%,
-      color-mix(in srgb, var(--color-card) 55%, transparent) 40%,
-      color-mix(in srgb, var(--color-card) 70%, transparent) 70%,
-      color-mix(in srgb, var(--color-card) 45%, transparent) 100%
+      color-mix(in srgb, var(--color-card) 20%, transparent) 0%,
+      color-mix(in srgb, var(--color-card) 40%, transparent) 45%,
+      color-mix(in srgb, var(--color-card) 55%, transparent) 100%
     );
   }
 
