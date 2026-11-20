@@ -7,6 +7,10 @@ export const siteConfig = {
   locale: "en_US",
   logo: "/brand/logo.svg",
   email: "guildngrain@gmail.com",
+  whatsapp: {
+    display: "+92 300 9759050",
+    href: "https://wa.me/923009759050",
+  },
   author: {
     name: "Guild & Grain",
     url: "",

@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { Container, Section } from "@/components/ui";
 import { siteConfig } from "@/config/site";
 import "./contact.css";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: `Contact ${siteConfig.name} at ${siteConfig.email} about bespoke leatherwork, catalog pieces, and care.`,
+  description: `Contact ${siteConfig.name} on WhatsApp at ${siteConfig.whatsapp.display} about bespoke leatherwork, catalog pieces, and care.`,
 };
 
 export default function ContactPage() {
-  const mailto = `mailto:${siteConfig.email}`;
+  const whatsappHref = siteConfig.whatsapp.href;
 
   return (
     <Section>
@@ -21,25 +21,35 @@ export default function ContactPage() {
           <h1 className="mt-3 text-heading-h2 text-foreground">Contact Us</h1>
           <p className="mt-4 max-w-2xl text-body text-muted">
             For catalog inquiries, bespoke commissions, sizing guidance, or
-            leather care — email us directly. We read every message and reply
+            leather care — message us on WhatsApp. We read every note and reply
             as soon as we can.
           </p>
 
           <div className="contact-panel mt-10">
             <div className="contact-panel-icon" aria-hidden>
-              <Mail className="size-6" strokeWidth={1.5} />
+              <MessageCircle className="size-6" strokeWidth={1.5} />
             </div>
             <div className="contact-panel-copy">
-              <h2 className="contact-panel-title">Email</h2>
+              <h2 className="contact-panel-title">WhatsApp</h2>
               <p className="contact-panel-hint">
-                Prefer a written note? Reach the studio here:
+                Prefer a quick chat? Reach the studio here:
               </p>
-              <a href={mailto} className="contact-email">
-                {siteConfig.email}
+              <a
+                href={whatsappHref}
+                className="contact-email"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {siteConfig.whatsapp.display}
               </a>
             </div>
-            <a href={mailto} className="contact-cta">
-              Send an email
+            <a
+              href={whatsappHref}
+              className="contact-cta"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chat on WhatsApp
             </a>
           </div>
 
