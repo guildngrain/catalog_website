@@ -48,6 +48,8 @@ export function Hero() {
           />
         </div>
 
+        <div className="hero-mobile-blur" aria-hidden />
+
         <div className="hero-copy">
           <h2 className="hero-headline">
             <span className="hero-headline-line">Born in the guilds of</span>
