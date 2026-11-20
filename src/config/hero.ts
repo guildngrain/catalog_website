@@ -1,6 +1,6 @@
 export const heroConfig = {
   background: "/home/hero/hero_background.webp",
-  backgroundMobile: "/home/hero/hero_background_mobile.webp",
+  backgroundMobile: "/home/hero/header-image-mobile.png",
   man: "/home/hero/hero_man.webp",
   woman: "/home/hero/hero_women.webp",
   tagline: {

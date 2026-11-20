@@ -231,7 +231,7 @@
 
   .hero-stage {
     min-height: min(72vh, 34rem);
-    align-items: flex-end;
+    align-items: center; /* vertical middle — stage is a row flex */
   }
 
   .hero-media {
@@ -245,41 +245,29 @@
   .hero-bg--mobile {
     display: block;
     object-fit: cover;
-    object-position: center top;
+    object-position: center center;
   }
 
   .hero-overlay {
     background: linear-gradient(
       180deg,
-      color-mix(in srgb, var(--color-card) 18%, transparent) 0%,
-      color-mix(in srgb, var(--color-card) 55%, transparent) 38%,
-      color-mix(in srgb, var(--color-card) 92%, transparent) 68%,
-      var(--color-card) 88%
+      color-mix(in srgb, var(--color-card) 35%, transparent) 0%,
+      color-mix(in srgb, var(--color-card) 55%, transparent) 40%,
+      color-mix(in srgb, var(--color-card) 70%, transparent) 70%,
+      color-mix(in srgb, var(--color-card) 45%, transparent) 100%
     );
   }
 
+  /* Figures are baked into header-image-mobile.png */
   .hero-figure-woman,
   .hero-figure-man {
-    display: block;
-    bottom: 0;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .hero-figure-woman {
-    right: 22%;
-    width: min(48%, 11rem);
-  }
-
-  .hero-figure-man {
-    right: 1%;
-    width: min(36%, 8rem);
+    display: none;
   }
 
   .hero-copy {
     width: 100%;
     max-width: none;
-    padding: 1.5rem 1rem 2rem;
+    padding: 1.5rem 1rem;
     gap: 1rem;
   }
 
