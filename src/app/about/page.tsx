@@ -150,8 +150,8 @@ export default function AboutPage() {
           <div>
             <h2 className="about-heading">Find your hide</h2>
             <p>
-              Explore the catalog, or email us if you want help choosing between
-              cowhide and sheepskin.
+              Explore the catalog, or message us on WhatsApp if you want help
+              choosing between cowhide and sheepskin.
             </p>
           </div>
           <div className="about-cta-actions">

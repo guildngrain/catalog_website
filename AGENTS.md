@@ -33,7 +33,7 @@ src/
 ├── lib/
 │   └── utils.ts            # cn() helper (clsx + tailwind-merge)
 ├── config/
-│   ├── site.ts             # Site metadata, contact email
+│   ├── site.ts             # Site metadata, WhatsApp contact
 │   ├── navigation.ts       # Nav structure
 │   ├── catalog.ts          # Static catalog categories + products
 │   ├── blog.ts             # Static blog posts
@@ -126,7 +126,7 @@ Shared visual values live in CSS tokens. **Component-specific layout/look lives 
 
 ### Configuration
 
-- Site-wide config (name, URL, email) goes in `src/config/site.ts`
+- Site-wide config (name, URL, WhatsApp) goes in `src/config/site.ts`
 - Navigation structure goes in `src/config/navigation.ts`
 - Design tokens (colors, fonts, type) go in `src/styles/tokens.css`
 - Shared types go in `src/types/`

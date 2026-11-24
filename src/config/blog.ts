@@ -188,7 +188,7 @@ export const blogPosts: BlogPost[] = [
           },
           {
             type: "paragraph",
-            text: "Browse Guild & Grain for silhouettes built to stay relevant, or email us if you want help picking a timeless cut for how you actually dress. Classics are not frozen in the past—they are ready for whatever comes next.",
+            text: "Browse Guild & Grain for silhouettes built to stay relevant, or message us on WhatsApp if you want help picking a timeless cut for how you actually dress. Classics are not frozen in the past—they are ready for whatever comes next.",
           },
         ],
       },
@@ -352,7 +352,7 @@ export const blogPosts: BlogPost[] = [
           },
           {
             type: "paragraph",
-            text: "If you want help reading a piece from our catalog—or comparing cowhide versus sheepskin for how you live—email Guild & Grain. We would rather walk you through the leather than leave quality to guesswork.",
+            text: "If you want help reading a piece from our catalog—or comparing cowhide versus sheepskin for how you live—message Guild & Grain on WhatsApp. We would rather walk you through the leather than leave quality to guesswork.",
           },
           {
             type: "paragraph",
@@ -498,7 +498,7 @@ export const blogPosts: BlogPost[] = [
           },
           {
             type: "paragraph",
-            text: "When you are ready, browse the Guild & Grain catalog by style and hide—or email us with your fit notes. We would rather help you choose the right jacket than rush the wrong one.",
+            text: "When you are ready, browse the Guild & Grain catalog by style and hide—or message us on WhatsApp with your fit notes. We would rather help you choose the right jacket than rush the wrong one.",
           },
           {
             type: "paragraph",

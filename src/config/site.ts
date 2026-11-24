@@ -6,7 +6,6 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   locale: "en_US",
   logo: "/brand/logo.svg",
-  email: "guildngrain@gmail.com",
   whatsapp: {
     display: "+92 300 9759050",
     href: "https://wa.me/923009759050",

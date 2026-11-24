@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { navigation } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui";
@@ -29,7 +29,7 @@ function FooterLinkColumn({
 
 export function Footer() {
   const { catalog, journal } = navigation.footer;
-  const mailto = `mailto:${siteConfig.email}`;
+  const whatsappHref = siteConfig.whatsapp.href;
 
   return (
     <footer className="mt-auto border-t">
@@ -47,9 +47,14 @@ export function Footer() {
               />
             </Link>
             <p className="footer-desc max-w-xs">{siteConfig.description}</p>
-            <a href={mailto} className="footer-email">
-              <Mail className="size-4" strokeWidth={1.5} aria-hidden />
-              {siteConfig.email}
+            <a
+              href={whatsappHref}
+              className="footer-email"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle className="size-4" strokeWidth={1.5} aria-hidden />
+              {siteConfig.whatsapp.display}
             </a>
           </div>
 
@@ -63,7 +68,13 @@ export function Footer() {
                 <Link href="/contact">Contact Us</Link>
               </li>
               <li>
-                <a href={mailto}>{siteConfig.email}</a>
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {siteConfig.whatsapp.display}
+                </a>
               </li>
             </ul>
           </div>
@@ -86,8 +97,13 @@ export function Footer() {
                 ))}
               </ul>
             ) : null}
-            <a href={mailto} className="footer-bar-email">
-              Email us
+            <a
+              href={whatsappHref}
+              className="footer-bar-email"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp us
             </a>
           </div>
         </Container>
